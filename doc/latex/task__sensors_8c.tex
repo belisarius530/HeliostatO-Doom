@@ -1,0 +1,154 @@
+\hypertarget{task__sensors_8c}{\section{task\-\_\-sensors.\-c File Reference}
+\label{task__sensors_8c}\index{task\-\_\-sensors.\-c@{task\-\_\-sensors.\-c}}
+}
+
+
+This file contains functions for the A\-D\-Cs, joystick, and buttons.  
+
+
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Free\-R\-T\-O\-S.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}croutine.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}semphr.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shares.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-sensors.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}twi.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task__sensors_8c_a2b815e6730e8723a6d1d06d9ef8f31c0}{adc\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em This Function prompts the A\-V\-R I2\-C device to read one or more bytes. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{task__sensors_8c_a67d34c1378ba0871293df7b6a387de60}{adc\-\_\-read} (uint8\-\_\-t adc\-\_\-channel)
+\begin{DoxyCompactList}\small\item\em This Function reads a byte from the selected A\-D\-C channel. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{task__sensors_8c_ad30f80427ce3db3bd84450d9b882eabf}{button\-\_\-pressed} (void)
+\begin{DoxyCompactList}\small\item\em This Function detects whether or not a button has been pressed. \end{DoxyCompactList}\item 
+\hypertarget{task__sensors_8c_a9ebb64bc3ea7a1e75d422784fe931347}{void \hyperlink{task__sensors_8c_a9ebb64bc3ea7a1e75d422784fe931347}{button\-\_\-init} (void)}\label{task__sensors_8c_a9ebb64bc3ea7a1e75d422784fe931347}
+
+\begin{DoxyCompactList}\small\item\em This function initializes the \char`\"{}\-Target Set\char`\"{} button. \end{DoxyCompactList}\item 
+void \hyperlink{task__sensors_8c_ae2fe3586205b745ad1842cf7a40bb668}{task\-\_\-sensors} (void $\ast$pv\-Parameters)
+\begin{DoxyCompactList}\small\item\em This is the task function for monitoring the button and joysticks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task__sensors_8c_ac542bff403705b50acc279fbbda72d66}{x\-Semaphore\-Handle {\bfseries adc\-\_\-mutex\-\_\-semaphore}}\label{task__sensors_8c_ac542bff403705b50acc279fbbda72d66}
+
+\item 
+\hypertarget{task__sensors_8c_aa9f4f3a9d7ed88800fd6a1b786bbefb2}{uint8\-\_\-t {\bfseries btn\-\_\-\-S\-H\-A\-R\-E\-D}}\label{task__sensors_8c_aa9f4f3a9d7ed88800fd6a1b786bbefb2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions for the A\-D\-Cs, joystick, and buttons. Revisions\-: \begin{DoxyItemize}
+\item 11-\/27-\/2014 J\-F, M\-L, J\-R created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by J\-F, M\-L, J\-R and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{task__sensors_8c_source}{task\-\_\-sensors.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{task__sensors_8c_a2b815e6730e8723a6d1d06d9ef8f31c0}{\index{task\-\_\-sensors.\-c@{task\-\_\-sensors.\-c}!adc\-\_\-init@{adc\-\_\-init}}
+\index{adc\-\_\-init@{adc\-\_\-init}!task_sensors.c@{task\-\_\-sensors.\-c}}
+\subsubsection[{adc\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void adc\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{task__sensors_8c_a2b815e6730e8723a6d1d06d9ef8f31c0}
+
+
+This Function prompts the A\-V\-R I2\-C device to read one or more bytes. 
+
+This Function prompts the I2\-C device to read data from the I2\-C data lines in master receiver mode. If the argument \char`\"{}lastbit\char`\"{} is 0, then after receiving the last byte of information, the acknowledge bit is not pulled low -\/ this indicates the end of the transmission. If \char`\"{}lastbit\char`\"{} is set to 1, the acknowledge bit will be sent, and the I2\-C device will continue to read data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lastbit} & This tells the function whether or not pull the i2c/twi data lines low for an \char`\"{}\-A\-C\-K\char`\"{} condition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the single byte of recieved data.\-This function initializes the A\-D\-C on the A\-T\-M\-E\-G\-A 1284p. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file task\-\_\-sensors.\-c.
+
+
+
+Referenced by task\-\_\-sensors().
+
+\hypertarget{task__sensors_8c_a67d34c1378ba0871293df7b6a387de60}{\index{task\-\_\-sensors.\-c@{task\-\_\-sensors.\-c}!adc\-\_\-read@{adc\-\_\-read}}
+\index{adc\-\_\-read@{adc\-\_\-read}!task_sensors.c@{task\-\_\-sensors.\-c}}
+\subsubsection[{adc\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t adc\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{adc\-\_\-channel}
+\end{DoxyParamCaption}
+)}}\label{task__sensors_8c_a67d34c1378ba0871293df7b6a387de60}
+
+
+This Function reads a byte from the selected A\-D\-C channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adc\-\_\-channel} & Takes one of the \#define macros from \hyperlink{task__sensors_8h}{task\-\_\-sensors.\-h} as a parameter, for the purpose of selecting one of the A\-D\-C channels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns and unsigned 16bit data value. 
+\end{DoxyReturn}
+Use a mutex to control access to the A\-D\-C. 
+
+Definition at line 71 of file task\-\_\-sensors.\-c.
+
+
+
+Referenced by task\-\_\-safety(), and task\-\_\-sensors().
+
+\hypertarget{task__sensors_8c_ad30f80427ce3db3bd84450d9b882eabf}{\index{task\-\_\-sensors.\-c@{task\-\_\-sensors.\-c}!button\-\_\-pressed@{button\-\_\-pressed}}
+\index{button\-\_\-pressed@{button\-\_\-pressed}!task_sensors.c@{task\-\_\-sensors.\-c}}
+\subsubsection[{button\-\_\-pressed}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t button\-\_\-pressed (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{task__sensors_8c_ad30f80427ce3db3bd84450d9b882eabf}
+
+
+This Function detects whether or not a button has been pressed. 
+
+This function performs a software debounce, and updates a shared variable(btn\-\_\-\-S\-H\-A\-R\-E\-D) when a level change is detected, indicating that the button has been pressed. \begin{DoxyReturn}{Returns}
+Returns the status of the button level. 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file task\-\_\-sensors.\-c.
+
+
+
+Referenced by task\-\_\-sensors().
+
+\hypertarget{task__sensors_8c_ae2fe3586205b745ad1842cf7a40bb668}{\index{task\-\_\-sensors.\-c@{task\-\_\-sensors.\-c}!task\-\_\-sensors@{task\-\_\-sensors}}
+\index{task\-\_\-sensors@{task\-\_\-sensors}!task_sensors.c@{task\-\_\-sensors.\-c}}
+\subsubsection[{task\-\_\-sensors}]{\setlength{\rightskip}{0pt plus 5cm}void task\-\_\-sensors (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\-Parameters}
+\end{DoxyParamCaption}
+)}}\label{task__sensors_8c_ae2fe3586205b745ad1842cf7a40bb668}
+
+
+This is the task function for monitoring the button and joysticks. 
+
+This function monitors the \char`\"{}\-Target Set\char`\"{} button, and when it is pressed, updates shared variables \char`\"{}motor1\-\_\-power\-\_\-\-S\-H\-A\-R\-E\-D\char`\"{}, and \char`\"{}motor2\-\_\-power\-\_\-\-S\-H\-A\-R\-E\-D\char`\"{} with adc\-\_\-channel readings. If the button is N\-O\-T pressed, the motor power shareds are set to the effective \char`\"{}zero power\char`\"{} value of 512.(1024 adc values corresponding to full forward(1023), and full reverse(0); 
+
+Definition at line 159 of file task\-\_\-sensors.\-c.
+
+
+
+References adc\-\_\-init(), adc\-\_\-read(), button\-\_\-init(), and button\-\_\-pressed().
+
+
+
+Referenced by main().
+

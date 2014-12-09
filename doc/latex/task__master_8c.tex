@@ -1,0 +1,88 @@
+\hypertarget{task__master_8c}{\section{task\-\_\-master.\-c File Reference}
+\label{task__master_8c}\index{task\-\_\-master.\-c@{task\-\_\-master.\-c}}
+}
+
+
+This file contains function declarations for the master task. This task is an implementation of a state machine, which governs the state of the system based on the values of certain shared variables.  
+
+
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Free\-R\-T\-O\-S.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}croutine.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}semphr.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}uart.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shares.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-master.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task__master_8c_a7abe005ce30de2f407700cf71df346f9}{task\-\_\-master} (void $\ast$pv\-Parameters)
+\begin{DoxyCompactList}\small\item\em This is the task function for the master task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task__master_8c_a853aaa8b26d6ef4013d61fd8d6e397e0}{uint8\-\_\-t {\bfseries state\-\_\-\-S\-H\-A\-R\-E\-D}}\label{task__master_8c_a853aaa8b26d6ef4013d61fd8d6e397e0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains function declarations for the master task. This task is an implementation of a state machine, which governs the state of the system based on the values of certain shared variables. Revisions\-: \begin{DoxyItemize}
+\item 11-\/27-\/2014 J\-F, M\-L, J\-R created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by J\-F, M\-L, J\-R and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{task__master_8c_source}{task\-\_\-master.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{task__master_8c_a7abe005ce30de2f407700cf71df346f9}{\index{task\-\_\-master.\-c@{task\-\_\-master.\-c}!task\-\_\-master@{task\-\_\-master}}
+\index{task\-\_\-master@{task\-\_\-master}!task_master.c@{task\-\_\-master.\-c}}
+\subsubsection[{task\-\_\-master}]{\setlength{\rightskip}{0pt plus 5cm}void task\-\_\-master (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\-Parameters}
+\end{DoxyParamCaption}
+)}}\label{task__master_8c_a7abe005ce30de2f407700cf71df346f9}
+
+
+This is the task function for the master task. 
+
+This function decides which state the system is in, based on the previous state, and the current values of certain shared variables. The seven possible system states are as follows\-: \begin{DoxyVerb}AWAITING_CAL - Awaiting Calibration - The system is waiting for the user to 
+press the target set button, to initialize the zero reference position.
+Motor power: 0
+
+CALIBRATION  - Calibration State - The user is holding the target set button,
+and controlling the mirror array with the joystick. Once the mirror array is
+in the zero reference position, the user can release the button.
+Motor power: Joystick ADC Reading
+
+AWAITING_TARG - Awaiting Target - The system is waiting for the user to 
+press the target set button, to initialize the first target.
+Motor power: 0
+
+SELECT_TARG  - Target Selection - The user is holding the target set button,
+and controlling the mirror array with the joystick. Once the sun is correctly
+being redirected to the target, the user can release the button.
+Motor power: Joystick ADC Reading
+
+TRACK_TARG - The mirror array is actively tracking the sun, and redirecting
+the beam of light to the target.
+Motor power: PI controller
+
+ERROR - The safety task has decided that an error has occurred, and the motors
+are powered down in response.
+Motor power: 0
+
+IDLE - state which allows the user to reset the system from the ERROR state to
+the SELECT_TARG state.
+Motor power: 0\end{DoxyVerb}
+ 
+
+Definition at line 76 of file task\-\_\-master.\-c.
+
+
+
+Referenced by main().
+

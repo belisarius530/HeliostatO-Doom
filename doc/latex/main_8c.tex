@@ -1,0 +1,69 @@
+\hypertarget{main_8c}{\section{main.\-c File Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
+}
+
+
+This file contains function the main function, which creates tasks, and runs the scheduler.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$avr/wdt.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Free\-R\-T\-O\-S.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}croutine.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}semphr.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}priorities.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shares.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-orient.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-comms.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-sensors.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-motors.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-safety.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-master.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}uart.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a829f270f2e1ae853d61f2b2fc24c4f4c}{void \hyperlink{main_8c_a829f270f2e1ae853d61f2b2fc24c4f4c}{task\-\_\-heartbeat} (void $\ast$pv\-Parameters)}\label{main_8c_a829f270f2e1ae853d61f2b2fc24c4f4c}
+
+\begin{DoxyCompactList}\small\item\em The heartbeat task simply blinks an L\-E\-D to show that the system is running. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\item 
+\hypertarget{main_8c_aa64c6dce15e9de9105b4ae9533c9a267}{\hyperlink{main_8c_aa64c6dce15e9de9105b4ae9533c9a267}{I\-S\-R} (P\-C\-I\-N\-T0\-\_\-vect)}\label{main_8c_aa64c6dce15e9de9105b4ae9533c9a267}
+
+\begin{DoxyCompactList}\small\item\em This I\-S\-R updates the motors position when a pin change interrupt has occured as a result of a change in the encoder output waveforms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains function the main function, which creates tasks, and runs the scheduler. Revisions\-: \begin{DoxyItemize}
+\item 11-\/27-\/2014 J\-F, M\-L, J\-R created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by J\-F, M\-L, J\-R and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{main_8c_source}{main.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{\index{main.\-c@{main.\-c}!main@{main}}
+\index{main@{main}!main.c@{main.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+The main function sets up the R\-T\-O\-S. Some test tasks are created. Then the scheduler is started up; the scheduler runs until power is turned off or there's a reset. \begin{DoxyReturn}{Returns}
+This is a real-\/time microcontroller program which doesn't return. Ever. 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file main.\-c.
+
+
+
+References encoders\-\_\-init(), task\-\_\-comms(), task\-\_\-heartbeat(), task\-\_\-master(), task\-\_\-motor1(), task\-\_\-motor2(), task\-\_\-orient(), task\-\_\-safety(), and task\-\_\-sensors().
+

@@ -1,0 +1,215 @@
+\hypertarget{task__motors_8h}{\section{task\-\_\-motors.\-h File Reference}
+\label{task__motors_8h}\index{task\-\_\-motors.\-h@{task\-\_\-motors.\-h}}
+}
+
+
+This file contains \#defines and function declarations for motor tasks.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task__motors_8h_af787efe980860835c4429ae98c046764}{\#define {\bfseries S\-T\-A\-C\-K\-\_\-\-S\-I\-Z\-E\-\_\-\-M\-O\-T\-O\-R\-S}~280}\label{task__motors_8h_af787efe980860835c4429ae98c046764}
+
+\item 
+\hypertarget{task__motors_8h_adf4b3012c197dd96790282e6117b0a45}{\#define {\bfseries I\-N\-\_\-\-A\-\_\-\-M1}~P\-B0}\label{task__motors_8h_adf4b3012c197dd96790282e6117b0a45}
+
+\item 
+\hypertarget{task__motors_8h_ae153f998e067bbf4508b088e2b1626dd}{\#define {\bfseries I\-N\-\_\-\-B\-\_\-\-M1}~P\-B1}\label{task__motors_8h_ae153f998e067bbf4508b088e2b1626dd}
+
+\item 
+\hypertarget{task__motors_8h_a5fe5df5856fadf9bfe63b3d6592da3ea}{\#define {\bfseries E\-N\-\_\-\-A\-B\-\_\-\-M1}~P\-B2}\label{task__motors_8h_a5fe5df5856fadf9bfe63b3d6592da3ea}
+
+\item 
+\hypertarget{task__motors_8h_a9aa929ad535b5a5167f2fe739029da6c}{\#define {\bfseries P\-W\-M\-\_\-\-M1}~P\-D5}\label{task__motors_8h_a9aa929ad535b5a5167f2fe739029da6c}
+
+\item 
+\hypertarget{task__motors_8h_ae0e63242c8e18b9dbc1614e5523d242a}{\#define {\bfseries I\-N\-\_\-\-A\-\_\-\-M2}~P\-C4}\label{task__motors_8h_ae0e63242c8e18b9dbc1614e5523d242a}
+
+\item 
+\hypertarget{task__motors_8h_ab056467b737a858011436daf57d7cd74}{\#define {\bfseries I\-N\-\_\-\-B\-\_\-\-M2}~P\-C5}\label{task__motors_8h_ab056467b737a858011436daf57d7cd74}
+
+\item 
+\hypertarget{task__motors_8h_a29758fc7aafeef7a42c392cd5c8593b8}{\#define {\bfseries E\-N\-\_\-\-A\-B\-\_\-\-M2}~P\-C6}\label{task__motors_8h_a29758fc7aafeef7a42c392cd5c8593b8}
+
+\item 
+\hypertarget{task__motors_8h_a092f414385351f307f91b1f8170f6d12}{\#define {\bfseries P\-W\-M\-\_\-\-M2}~P\-D4}\label{task__motors_8h_a092f414385351f307f91b1f8170f6d12}
+
+\item 
+\hypertarget{task__motors_8h_ab495685c5ebcbe83ac1a4bb101be3b81}{\#define {\bfseries E\-N\-C\-\_\-\-A\-\_\-\-M1}~P\-A0}\label{task__motors_8h_ab495685c5ebcbe83ac1a4bb101be3b81}
+
+\item 
+\hypertarget{task__motors_8h_a20e48db77278614344212be49702243d}{\#define {\bfseries E\-N\-C\-\_\-\-B\-\_\-\-M1}~P\-A1}\label{task__motors_8h_a20e48db77278614344212be49702243d}
+
+\item 
+\hypertarget{task__motors_8h_aef7ee9d1e7fb0821824ef9b3fe49db42}{\#define {\bfseries E\-N\-C\-\_\-\-A\-\_\-\-M2}~P\-A2}\label{task__motors_8h_aef7ee9d1e7fb0821824ef9b3fe49db42}
+
+\item 
+\hypertarget{task__motors_8h_aaa4efa103a077166f868824a87b535eb}{\#define {\bfseries E\-N\-C\-\_\-\-B\-\_\-\-M2}~P\-A3}\label{task__motors_8h_aaa4efa103a077166f868824a87b535eb}
+
+\item 
+\hypertarget{task__motors_8h_aacbf58613d7639d58ac4516634f517fe}{\#define {\bfseries P\-W\-R\-\_\-\-L\-I\-M\-I\-T\-\_\-\-M1}~150}\label{task__motors_8h_aacbf58613d7639d58ac4516634f517fe}
+
+\item 
+\hypertarget{task__motors_8h_a18c54766d12229e344915ea80d9df559}{\#define {\bfseries P\-W\-R\-\_\-\-L\-I\-M\-I\-T\-\_\-\-M2}~350}\label{task__motors_8h_a18c54766d12229e344915ea80d9df559}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task__motors_8h_af02e2149caeb6116f256783348031c86}{encoders\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em This function initializes both motor encoders. \end{DoxyCompactList}\item 
+void \hyperlink{task__motors_8h_abad32bfc46c9f31ba81955775611bd21}{motors\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em This function initializes both motors. \end{DoxyCompactList}\item 
+void \hyperlink{task__motors_8h_a4a3771bfff5cda74266bca25133d5da2}{motor1\-\_\-power} (int16\-\_\-t power)
+\begin{DoxyCompactList}\small\item\em This function sets the power level for motor 1. \end{DoxyCompactList}\item 
+void \hyperlink{task__motors_8h_a4f737ef3a26d7c4f12bb85c764c01873}{motor2\-\_\-power} (int16\-\_\-t power)
+\begin{DoxyCompactList}\small\item\em This function sets the power level for motor 2. \end{DoxyCompactList}\item 
+void \hyperlink{task__motors_8h_a4ec60e37ee03593e7370bfbf5e223588}{task\-\_\-motor1} (void $\ast$pv\-Parameters)
+\begin{DoxyCompactList}\small\item\em This is the task function for motor 1. \end{DoxyCompactList}\item 
+void \hyperlink{task__motors_8h_a27f6dd12d5a0dabaf8c6f050c05077cf}{task\-\_\-motor2} (void $\ast$pv\-Parameters)
+\begin{DoxyCompactList}\small\item\em This is the task function for motor 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains \#defines and function declarations for motor tasks. Revisions\-: \begin{DoxyItemize}
+\item 11-\/27-\/2014 J\-F, M\-L, J\-R created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by J\-F, M\-L, J\-R and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{task__motors_8h_source}{task\-\_\-motors.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{task__motors_8h_af02e2149caeb6116f256783348031c86}{\index{task\-\_\-motors.\-h@{task\-\_\-motors.\-h}!encoders\-\_\-init@{encoders\-\_\-init}}
+\index{encoders\-\_\-init@{encoders\-\_\-init}!task_motors.h@{task\-\_\-motors.\-h}}
+\subsubsection[{encoders\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void encoders\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{task__motors_8h_af02e2149caeb6116f256783348031c86}
+
+
+This function initializes both motor encoders. 
+
+This function initializes all of the required pins, variables, and interrupts necessary to use the quadrature encoders. 
+
+Definition at line 60 of file task\-\_\-motors.\-c.
+
+
+
+Referenced by main().
+
+\hypertarget{task__motors_8h_a4a3771bfff5cda74266bca25133d5da2}{\index{task\-\_\-motors.\-h@{task\-\_\-motors.\-h}!motor1\-\_\-power@{motor1\-\_\-power}}
+\index{motor1\-\_\-power@{motor1\-\_\-power}!task_motors.h@{task\-\_\-motors.\-h}}
+\subsubsection[{motor1\-\_\-power}]{\setlength{\rightskip}{0pt plus 5cm}void motor1\-\_\-power (
+\begin{DoxyParamCaption}
+\item[{int16\-\_\-t}]{power}
+\end{DoxyParamCaption}
+)}}\label{task__motors_8h_a4a3771bfff5cda74266bca25133d5da2}
+
+
+This function sets the power level for motor 1. 
+
+This function converts a signed integer into a pwm signal and direction command for the vnh5019 motor driver chips. 
+\begin{DoxyParams}{Parameters}
+{\em power} & The signed 16-\/bit integer corresponding to the magnitude and direction of power applied to the motors. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file task\-\_\-motors.\-c.
+
+
+
+Referenced by task\-\_\-motor1().
+
+\hypertarget{task__motors_8h_a4f737ef3a26d7c4f12bb85c764c01873}{\index{task\-\_\-motors.\-h@{task\-\_\-motors.\-h}!motor2\-\_\-power@{motor2\-\_\-power}}
+\index{motor2\-\_\-power@{motor2\-\_\-power}!task_motors.h@{task\-\_\-motors.\-h}}
+\subsubsection[{motor2\-\_\-power}]{\setlength{\rightskip}{0pt plus 5cm}void motor2\-\_\-power (
+\begin{DoxyParamCaption}
+\item[{int16\-\_\-t}]{power}
+\end{DoxyParamCaption}
+)}}\label{task__motors_8h_a4f737ef3a26d7c4f12bb85c764c01873}
+
+
+This function sets the power level for motor 2. 
+
+This function converts a signed integer into a pwm signal and direction command for the vnh5019 motor driver chips. 
+\begin{DoxyParams}{Parameters}
+{\em power} & The signed 16-\/bit integer corresponding to the magnitude and direction of power applied to the motors. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 161 of file task\-\_\-motors.\-c.
+
+
+
+Referenced by task\-\_\-motor2().
+
+\hypertarget{task__motors_8h_abad32bfc46c9f31ba81955775611bd21}{\index{task\-\_\-motors.\-h@{task\-\_\-motors.\-h}!motors\-\_\-init@{motors\-\_\-init}}
+\index{motors\-\_\-init@{motors\-\_\-init}!task_motors.h@{task\-\_\-motors.\-h}}
+\subsubsection[{motors\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void motors\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{task__motors_8h_abad32bfc46c9f31ba81955775611bd21}
+
+
+This function initializes both motors. 
+
+This function initializes all required pins and variables for the motors, and also initializes timer 1 to generate an output pwm signal for both motor controllers. 
+
+Definition at line 86 of file task\-\_\-motors.\-c.
+
+
+
+Referenced by task\-\_\-motor1(), and task\-\_\-motor2().
+
+\hypertarget{task__motors_8h_a4ec60e37ee03593e7370bfbf5e223588}{\index{task\-\_\-motors.\-h@{task\-\_\-motors.\-h}!task\-\_\-motor1@{task\-\_\-motor1}}
+\index{task\-\_\-motor1@{task\-\_\-motor1}!task_motors.h@{task\-\_\-motors.\-h}}
+\subsubsection[{task\-\_\-motor1}]{\setlength{\rightskip}{0pt plus 5cm}void task\-\_\-motor1 (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\-Parameters}
+\end{DoxyParamCaption}
+)}}\label{task__motors_8h_a4ec60e37ee03593e7370bfbf5e223588}
+
+
+This is the task function for motor 1. 
+
+This function decides, based on the system state, which control signal gets to set the power level of motor 1. System state is decided/updated in task\-\_\-master. 
+
+Definition at line 193 of file task\-\_\-motors.\-c.
+
+
+
+References motor1\-\_\-power(), and motors\-\_\-init().
+
+
+
+Referenced by main().
+
+\hypertarget{task__motors_8h_a27f6dd12d5a0dabaf8c6f050c05077cf}{\index{task\-\_\-motors.\-h@{task\-\_\-motors.\-h}!task\-\_\-motor2@{task\-\_\-motor2}}
+\index{task\-\_\-motor2@{task\-\_\-motor2}!task_motors.h@{task\-\_\-motors.\-h}}
+\subsubsection[{task\-\_\-motor2}]{\setlength{\rightskip}{0pt plus 5cm}void task\-\_\-motor2 (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\-Parameters}
+\end{DoxyParamCaption}
+)}}\label{task__motors_8h_a27f6dd12d5a0dabaf8c6f050c05077cf}
+
+
+This is the task function for motor 2. 
+
+This function decides, based on the system state, which control signal gets to set the power level of motor 2. System state is decided in task\-\_\-master. 
+
+Definition at line 269 of file task\-\_\-motors.\-c.
+
+
+
+References motor2\-\_\-power(), and motors\-\_\-init().
+
+
+
+Referenced by main().
+

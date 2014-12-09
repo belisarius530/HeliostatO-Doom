@@ -1,0 +1,57 @@
+\hypertarget{task__comms_8h}{\section{task\-\_\-comms.\-h File Reference}
+\label{task__comms_8h}\index{task\-\_\-comms.\-h@{task\-\_\-comms.\-h}}
+}
+
+
+This file contains \#defines and function declarations for the communication task.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task__comms_8h_afdab62266421ac771a44eaea2b1549cf}{\#define {\bfseries S\-I\-Z\-E\-\_\-\-C\-O\-M\-M\-S\-\_\-\-Q\-U\-E\-U\-E}~40}\label{task__comms_8h_afdab62266421ac771a44eaea2b1549cf}
+
+\item 
+\hypertarget{task__comms_8h_ab89f95a3912dc4643f19a19a2adc5498}{\#define {\bfseries S\-T\-A\-C\-K\-\_\-\-S\-I\-Z\-E\-\_\-\-C\-O\-M\-M\-S}~280}\label{task__comms_8h_ab89f95a3912dc4643f19a19a2adc5498}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task__comms_8h_af9eda89d211d7e952b2a68df5d26d14c}{task\-\_\-comms} (void $\ast$pv\-Parameters)
+\begin{DoxyCompactList}\small\item\em This is the task function for uart communications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains \#defines and function declarations for the communication task. Revisions\-: \begin{DoxyItemize}
+\item 11-\/27-\/2014 J\-F, M\-L, J\-R created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by J\-F, M\-L, J\-R and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{task__comms_8h_source}{task\-\_\-comms.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{task__comms_8h_af9eda89d211d7e952b2a68df5d26d14c}{\index{task\-\_\-comms.\-h@{task\-\_\-comms.\-h}!task\-\_\-comms@{task\-\_\-comms}}
+\index{task\-\_\-comms@{task\-\_\-comms}!task_comms.h@{task\-\_\-comms.\-h}}
+\subsubsection[{task\-\_\-comms}]{\setlength{\rightskip}{0pt plus 5cm}void task\-\_\-comms (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\-Parameters}
+\end{DoxyParamCaption}
+)}}\label{task__comms_8h_af9eda89d211d7e952b2a68df5d26d14c}
+
+
+This is the task function for uart communications. 
+
+This function awaits new data to arrive to the communication queue, and prints this data to the uart. Code which sets up printf to work with the uart exists in \hyperlink{main_8c}{main.\-c}. 
+
+Definition at line 44 of file task\-\_\-comms.\-c.
+
+
+
+References usart\-\_\-init().
+
+
+
+Referenced by main().
+

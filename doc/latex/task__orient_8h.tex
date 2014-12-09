@@ -1,0 +1,82 @@
+\hypertarget{task__orient_8h}{\section{task\-\_\-orient.\-h File Reference}
+\label{task__orient_8h}\index{task\-\_\-orient.\-h@{task\-\_\-orient.\-h}}
+}
+
+
+This file contains \#defines and function declarations for the orientation algorithm, the magnetometer drivers, and the R\-T\-C drivers.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task__orient_8h_a4eded20968533a2a8ad156bb1aadf21f}{\#define {\bfseries S\-T\-A\-C\-K\-\_\-\-S\-I\-Z\-E\-\_\-\-O\-R\-I\-E\-N\-T}~280}\label{task__orient_8h_a4eded20968533a2a8ad156bb1aadf21f}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task__orient_8h_aa6c034ab648de553ac8581610cc1c2c8}{task\-\_\-orient} (void $\ast$pv\-Parameters)
+\begin{DoxyCompactList}\small\item\em This task function reads sensor data, and calculates the desired mirror angle. \end{DoxyCompactList}\item 
+\hypertarget{task__orient_8h_a230d2d6d472644c1bf0907d9de3c10bd}{void \hyperlink{task__orient_8h_a230d2d6d472644c1bf0907d9de3c10bd}{H\-M\-C5883\-\_\-init} (void)}\label{task__orient_8h_a230d2d6d472644c1bf0907d9de3c10bd}
+
+\begin{DoxyCompactList}\small\item\em This function initializes the H\-M\-C5883 magnetometer. \end{DoxyCompactList}\item 
+void \hyperlink{task__orient_8h_ab5cc693a3547701b935acdfffd6e9655}{H\-M\-C5883\-\_\-read} (void)
+\begin{DoxyCompactList}\small\item\em This function reads H\-M\-C5883 magnetometer data into shared variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains \#defines and function declarations for the orientation algorithm, the magnetometer drivers, and the R\-T\-C drivers. Revisions\-: \begin{DoxyItemize}
+\item 11-\/27-\/2014 J\-F, M\-L, J\-R created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by J\-F, M\-L, J\-R and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{task__orient_8h_source}{task\-\_\-orient.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{task__orient_8h_ab5cc693a3547701b935acdfffd6e9655}{\index{task\-\_\-orient.\-h@{task\-\_\-orient.\-h}!H\-M\-C5883\-\_\-read@{H\-M\-C5883\-\_\-read}}
+\index{H\-M\-C5883\-\_\-read@{H\-M\-C5883\-\_\-read}!task_orient.h@{task\-\_\-orient.\-h}}
+\subsubsection[{H\-M\-C5883\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void H\-M\-C5883\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{task__orient_8h_ab5cc693a3547701b935acdfffd6e9655}
+
+
+This function reads H\-M\-C5883 magnetometer data into shared variables. 
+
+This function uses shared variables, and should therefore only be called when the calling task's priority set very high, or from within a critical section. 
+
+Definition at line 71 of file task\-\_\-orient.\-c.
+
+
+
+References twi\-\_\-read(), twi\-\_\-start(), twi\-\_\-stop(), twi\-\_\-write(), and x\-\_\-h\-\_\-\-S\-H\-A\-R\-E\-D.
+
+
+
+Referenced by task\-\_\-orient().
+
+\hypertarget{task__orient_8h_aa6c034ab648de553ac8581610cc1c2c8}{\index{task\-\_\-orient.\-h@{task\-\_\-orient.\-h}!task\-\_\-orient@{task\-\_\-orient}}
+\index{task\-\_\-orient@{task\-\_\-orient}!task_orient.h@{task\-\_\-orient.\-h}}
+\subsubsection[{task\-\_\-orient}]{\setlength{\rightskip}{0pt plus 5cm}void task\-\_\-orient (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\-Parameters}
+\end{DoxyParamCaption}
+)}}\label{task__orient_8h_aa6c034ab648de553ac8581610cc1c2c8}
+
+
+This task function reads sensor data, and calculates the desired mirror angle. 
+
+This function wakes up every four minutes, determines time based on R\-T\-C sensor, determines heading with the magnetometer, calculates the angle of the sun, calculates the desired angle of the mirror array, commands that the array track the calculated angle, and blocks itself for another four minutes. The priority is set to max, since H\-M\-C5883\-\_\-read accesses a shared variable. 
+
+Definition at line 97 of file task\-\_\-orient.\-c.
+
+
+
+References H\-M\-C5883\-\_\-init(), and H\-M\-C5883\-\_\-read().
+
+
+
+Referenced by main().
+

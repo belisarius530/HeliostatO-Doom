@@ -1,0 +1,76 @@
+\hypertarget{twi_8c}{\section{twi.\-c File Reference}
+\label{twi_8c}\index{twi.\-c@{twi.\-c}}
+}
+
+
+This file contains functions used to interface with A\-V\-R twi/i2c hardware.  
+
+
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$util/delay.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}twi.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{twi_8c_a43bafb28b29491ec7f871319b5a3b2f8}{\#define {\bfseries F\-\_\-\-C\-P\-U}~16000000}\label{twi_8c_a43bafb28b29491ec7f871319b5a3b2f8}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{twi_8c_af37269da7f6b1b22438b78d2f965f274}{void \hyperlink{twi_8c_af37269da7f6b1b22438b78d2f965f274}{twi\-\_\-start} (void)}\label{twi_8c_af37269da7f6b1b22438b78d2f965f274}
+
+\begin{DoxyCompactList}\small\item\em This Function prompts the A\-V\-R I2\-C device to perform the start condition. \end{DoxyCompactList}\item 
+\hypertarget{twi_8c_acf52d6c93df110dee6d402b389e5042e}{void \hyperlink{twi_8c_acf52d6c93df110dee6d402b389e5042e}{twi\-\_\-stop} (void)}\label{twi_8c_acf52d6c93df110dee6d402b389e5042e}
+
+\begin{DoxyCompactList}\small\item\em This Function prompts the A\-V\-R I2\-C device to perform the stop condition. \end{DoxyCompactList}\item 
+\hypertarget{twi_8c_ab45679e1a7b3b8f97b636d825e7d14f7}{void \hyperlink{twi_8c_ab45679e1a7b3b8f97b636d825e7d14f7}{twi\-\_\-write} (uint8\-\_\-t data)}\label{twi_8c_ab45679e1a7b3b8f97b636d825e7d14f7}
+
+\begin{DoxyCompactList}\small\item\em This Function prompts the A\-V\-R I2\-C device to write one byte of data to the I2\-C lines. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{twi_8c_a3814018a39978d42ca31578ef02afd02}{twi\-\_\-read} (uint8\-\_\-t lastbit)
+\begin{DoxyCompactList}\small\item\em This Function prompts the A\-V\-R I2\-C device to read one or more bytes. \end{DoxyCompactList}\item 
+\hypertarget{twi_8c_a16f0e6b2fa5a26eadbf4086ab6d54467}{void \hyperlink{twi_8c_a16f0e6b2fa5a26eadbf4086ab6d54467}{twi\-\_\-init} (void)}\label{twi_8c_a16f0e6b2fa5a26eadbf4086ab6d54467}
+
+\begin{DoxyCompactList}\small\item\em This Function enable and initializes the I2\-C device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions used to interface with A\-V\-R twi/i2c hardware. Revisions\-: \begin{DoxyItemize}
+\item 04-\/01-\/2014 J\-F created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by Jonathan Fish and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{twi_8c_source}{twi.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{twi_8c_a3814018a39978d42ca31578ef02afd02}{\index{twi.\-c@{twi.\-c}!twi\-\_\-read@{twi\-\_\-read}}
+\index{twi\-\_\-read@{twi\-\_\-read}!twi.c@{twi.\-c}}
+\subsubsection[{twi\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t twi\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{lastbit}
+\end{DoxyParamCaption}
+)}}\label{twi_8c_a3814018a39978d42ca31578ef02afd02}
+
+
+This Function prompts the A\-V\-R I2\-C device to read one or more bytes. 
+
+This Function prompts the I2\-C device to read data from the I2\-C data lines in master receiver mode. If the argument \char`\"{}lastbit\char`\"{} is 0, then after receiving the last byte of information, the acknowledge bit is not pulled low -\/ this indicates the end of the transmission. If \char`\"{}lastbit\char`\"{} is set to 1, the acknowledge bit will be sent, and the I2\-C device will continue to read data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lastbit} & This tells the function whether or not pull the i2c/twi data lines low for an \char`\"{}\-A\-C\-K\char`\"{} condition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the single byte of recieved data. 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file twi.\-c.
+
+
+
+Referenced by H\-M\-C5883\-\_\-read().
+

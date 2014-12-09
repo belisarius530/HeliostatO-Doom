@@ -1,0 +1,66 @@
+\hypertarget{task__safety_8c}{\section{task\-\_\-safety.\-c File Reference}
+\label{task__safety_8c}\index{task\-\_\-safety.\-c@{task\-\_\-safety.\-c}}
+}
+
+
+This file contains functions which monitor the motors and turns them off if they fault or over current.  
+
+
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Free\-R\-T\-O\-S.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}croutine.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}semphr.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shares.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-sensors.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}twi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-motors.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\-\_\-safety.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task__safety_8c_a7f54b627833f2ab11fe746252a3d8133}{task\-\_\-safety} (void $\ast$pv\-Parameters)
+\begin{DoxyCompactList}\small\item\em This task function for the safety task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task__safety_8c_af0968644dbfef7d1a3ec073985d066cd}{uint8\-\_\-t {\bfseries safety\-\_\-error\-\_\-\-S\-H\-A\-R\-E\-D}}\label{task__safety_8c_af0968644dbfef7d1a3ec073985d066cd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions which monitor the motors and turns them off if they fault or over current. Revisions\-: \begin{DoxyItemize}
+\item 11-\/27-\/2014 J\-F, M\-L, J\-R created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by J\-F, M\-L, J\-R and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{task__safety_8c_source}{task\-\_\-safety.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{task__safety_8c_a7f54b627833f2ab11fe746252a3d8133}{\index{task\-\_\-safety.\-c@{task\-\_\-safety.\-c}!task\-\_\-safety@{task\-\_\-safety}}
+\index{task\-\_\-safety@{task\-\_\-safety}!task_safety.c@{task\-\_\-safety.\-c}}
+\subsubsection[{task\-\_\-safety}]{\setlength{\rightskip}{0pt plus 5cm}void task\-\_\-safety (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\-Parameters}
+\end{DoxyParamCaption}
+)}}\label{task__safety_8c_a7f54b627833f2ab11fe746252a3d8133}
+
+
+This task function for the safety task. 
+
+monitors the the motor diag\-\_\-enable A/\-B pins, and the current, and shuts the motors off if any problems are detected. 
+
+Definition at line 46 of file task\-\_\-safety.\-c.
+
+
+
+References adc\-\_\-read().
+
+
+
+Referenced by main().
+

@@ -1,0 +1,66 @@
+\hypertarget{task__safety_8h}{\section{task\-\_\-safety.\-h File Reference}
+\label{task__safety_8h}\index{task\-\_\-safety.\-h@{task\-\_\-safety.\-h}}
+}
+
+
+This file contains \#defines and function declarations for the safety task.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task__safety_8h_a3f61abe9e5e6a0b72f5d1a6cce986c94}{\#define {\bfseries S\-T\-A\-C\-K\-\_\-\-S\-I\-Z\-E\-\_\-\-S\-A\-F\-E\-T\-Y}~280}\label{task__safety_8h_a3f61abe9e5e6a0b72f5d1a6cce986c94}
+
+\item 
+\hypertarget{task__safety_8h_a553a33bdc1e79e56aa805a14241f6768}{\#define {\bfseries A\-D\-C\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-M1}~4}\label{task__safety_8h_a553a33bdc1e79e56aa805a14241f6768}
+
+\item 
+\hypertarget{task__safety_8h_af1e3437636bf455f80d2cbebfedb317a}{\#define {\bfseries A\-D\-C\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-M2}~5}\label{task__safety_8h_af1e3437636bf455f80d2cbebfedb317a}
+
+\item 
+\hypertarget{task__safety_8h_ae8729be2d693d83fcaacb517d0704535}{\#define {\bfseries M\-A\-X\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-M1}~512}\label{task__safety_8h_ae8729be2d693d83fcaacb517d0704535}
+
+\item 
+\hypertarget{task__safety_8h_a4ce6b02653e3f1cbc75ef7764d540fb6}{\#define {\bfseries M\-A\-X\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-M2}~512}\label{task__safety_8h_a4ce6b02653e3f1cbc75ef7764d540fb6}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task__safety_8h_a7f54b627833f2ab11fe746252a3d8133}{task\-\_\-safety} (void $\ast$pv\-Parameters)
+\begin{DoxyCompactList}\small\item\em This task function for the safety task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains \#defines and function declarations for the safety task. Revisions\-: \begin{DoxyItemize}
+\item 11-\/27-\/2014 J\-F, M\-L, J\-R created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by J\-F, M\-L, J\-R and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{task__safety_8h_source}{task\-\_\-safety.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{task__safety_8h_a7f54b627833f2ab11fe746252a3d8133}{\index{task\-\_\-safety.\-h@{task\-\_\-safety.\-h}!task\-\_\-safety@{task\-\_\-safety}}
+\index{task\-\_\-safety@{task\-\_\-safety}!task_safety.h@{task\-\_\-safety.\-h}}
+\subsubsection[{task\-\_\-safety}]{\setlength{\rightskip}{0pt plus 5cm}void task\-\_\-safety (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\-Parameters}
+\end{DoxyParamCaption}
+)}}\label{task__safety_8h_a7f54b627833f2ab11fe746252a3d8133}
+
+
+This task function for the safety task. 
+
+monitors the the motor diag\-\_\-enable A/\-B pins, and the current, and shuts the motors off if any problems are detected. 
+
+Definition at line 46 of file task\-\_\-safety.\-c.
+
+
+
+References adc\-\_\-read().
+
+
+
+Referenced by main().
+

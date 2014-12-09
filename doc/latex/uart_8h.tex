@@ -1,0 +1,64 @@
+\hypertarget{uart_8h}{\section{uart.\-h File Reference}
+\label{uart_8h}\index{uart.\-h@{uart.\-h}}
+}
+
+
+This file contains \#defines and function declarations for A\-V\-R A\-T\-M\-E\-G\-A U\-A\-R\-T drivers.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{uart_8h_aa6b92cd101806fab27f766552beac344}{\#define {\bfseries B\-A\-U\-D\-\_\-\-P\-R\-E\-S\-C\-A\-L\-E}~103}\label{uart_8h_aa6b92cd101806fab27f766552beac344}
+
+\item 
+\hypertarget{uart_8h_ac4ae05d621705cef0ec3ed1b8c71305c}{\#define {\bfseries C\-L\-K\-\_\-\-S\-P\-E\-E\-D}~16000000}\label{uart_8h_ac4ae05d621705cef0ec3ed1b8c71305c}
+
+\item 
+\hypertarget{uart_8h_a62634036639f88eece6fbf226b45f84b}{\#define {\bfseries B\-A\-U\-D}~9600}\label{uart_8h_a62634036639f88eece6fbf226b45f84b}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{uart_8h_a6aa3b4e2a5362cd032ed6b218afe58f6}{void \hyperlink{uart_8h_a6aa3b4e2a5362cd032ed6b218afe58f6}{usart\-\_\-init} (void)}\label{uart_8h_a6aa3b4e2a5362cd032ed6b218afe58f6}
+
+\begin{DoxyCompactList}\small\item\em This Function initializes the U\-A\-R\-T. \end{DoxyCompactList}\item 
+\hypertarget{uart_8h_af33d023d45014a3e65f7e8c6dd3e8433}{void \hyperlink{uart_8h_af33d023d45014a3e65f7e8c6dd3e8433}{usart\-\_\-send} (uint8\-\_\-t data)}\label{uart_8h_af33d023d45014a3e65f7e8c6dd3e8433}
+
+\begin{DoxyCompactList}\small\item\em This Function prompts the U\-A\-R\-T to transmit a byte. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{uart_8h_a193a0a7a4fc0f7e27230c17a53bb1b2f}{usart\-\_\-recv} (void)
+\begin{DoxyCompactList}\small\item\em This Function prompts the U\-A\-R\-T to recieve a byte. \end{DoxyCompactList}\item 
+\hypertarget{uart_8h_a771a2ad071c6379431844530560cd996}{uint8\-\_\-t \hyperlink{uart_8h_a771a2ad071c6379431844530560cd996}{usart\-\_\-istheredata} (void)}\label{uart_8h_a771a2ad071c6379431844530560cd996}
+
+\begin{DoxyCompactList}\small\item\em This Function returns true when there is new data on the uart bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains \#defines and function declarations for A\-V\-R A\-T\-M\-E\-G\-A U\-A\-R\-T drivers. Revisions\-: \begin{DoxyItemize}
+\item 04-\/01-\/2014 created original file\end{DoxyItemize}
+License\-: This file is copyright 2012 by Jonathan Fish and released under the Lesser G\-N\-U Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+Definition in file \hyperlink{uart_8h_source}{uart.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{uart_8h_a193a0a7a4fc0f7e27230c17a53bb1b2f}{\index{uart.\-h@{uart.\-h}!usart\-\_\-recv@{usart\-\_\-recv}}
+\index{usart\-\_\-recv@{usart\-\_\-recv}!uart.h@{uart.\-h}}
+\subsubsection[{usart\-\_\-recv}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t usart\-\_\-recv (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_a193a0a7a4fc0f7e27230c17a53bb1b2f}
+
+
+This Function prompts the U\-A\-R\-T to recieve a byte. 
+
+\begin{DoxyReturn}{Returns}
+Returns recieved byte of data. 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file uart.\-c.
+
